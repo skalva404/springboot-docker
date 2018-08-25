@@ -1,0 +1,20 @@
+management:
+  security:
+    enabled: false
+server:
+  port: 9000
+spring:
+  application:
+    name: springboot-vertx
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        watch:
+          enabled: true
+      discovery:
+        healthCheckPath: /health
+        healthCheckInterval: 20s
+        register-health-check: true
+        instanceId: ${spring.application.name}:${random.value}

@@ -1,0 +1,8 @@
+Package: springboot-vertx
+Version: [[version]]
+Section: misc
+Priority: low
+Architecture: all
+Depends:
+Description: springboot-vertx
+Maintainer: skalva404@gmail.com
