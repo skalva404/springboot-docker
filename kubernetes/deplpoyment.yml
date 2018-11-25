@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: springboot-vertx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: springboot-vertx
+  replicas: 1 # tells deployment to run 3 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: springboot-vertx
+    spec:
+      containers:
+      - name: springboot-vertx
+        image: springboot-vertx:0.0.1
+        ports:
+        - containerPort: 9000
